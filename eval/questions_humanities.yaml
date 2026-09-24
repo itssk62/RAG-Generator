@@ -1,0 +1,115 @@
+corpus: humanities
+description: Sun Tzu, The Art of War, Giles translation with commentary (TXT); Epictetus, The Enchiridion (DOCX)
+files: [art_of_war.txt, enchiridion.docx]
+questions:
+  - id: h01
+    question: According to Sun Tzu, what is the highest form of excellence in war?
+    source: art_of_war.txt
+    evidence: breaking the enemy's resistance without fighting
+    answer: Supreme excellence consists in breaking the enemy's resistance without fighting.
+    keywords: [without fighting]
+  - id: h02
+    question: What five constant factors govern the art of war?
+    source: art_of_war.txt
+    evidence: (1) The Moral Law; (2) Heaven
+    answer: The five constant factors are the Moral Law, Heaven, Earth, the Commander, and Method and discipline.
+    keywords: [moral law, heaven, earth, commander, method]
+  - id: h03
+    question: What is all warfare based on?
+    source: art_of_war.txt
+    evidence: All warfare is based on deception
+    answer: All warfare is based on deception.
+    keywords: [deception]
+  - id: h04
+    question: What happens if you know both the enemy and yourself?
+    source: art_of_war.txt
+    evidence: you need not fear the result of a hundred battles
+    answer: If you know the enemy and know yourself, you need not fear the result of a hundred battles.
+    keywords: [hundred battles]
+  - id: h05
+    question: What kinds of spies does Sun Tzu describe?
+    source: art_of_war.txt
+    evidence: (1) Local spies; (2) inward spies
+    answer: There are five classes of spies, namely local, inward, converted, doomed, and surviving spies.
+    keywords: [local, inward, converted, doomed, surviving]
+  - id: h06
+    question: What is the first way of attacking with fire?
+    source: art_of_war.txt
+    evidence: The first is to burn soldiers in their camp
+    answer: The first way of attacking with fire is to burn soldiers in their camp.
+    keywords: [camp]
+  - id: h07
+    question: Which varieties of ground does the art of war recognize?
+    source: art_of_war.txt
+    evidence: (1) Dispersive ground; (2) facile ground
+    answer: There are nine varieties of ground, starting with dispersive, facile, contentious, and open ground and ending with desperate ground.
+    keywords: [dispersive, facile, contentious, desperate]
+  - id: h08
+    question: Has any country ever benefited from a long war?
+    source: art_of_war.txt
+    evidence: no instance of a country having benefited from prolonged warfare
+    answer: There is no instance of a country having benefited from prolonged warfare.
+    keywords: [no instance]
+  - id: h09
+    question: Which king took notice of Sun Tzu because of his book?
+    source: art_of_war.txt
+    evidence: brought him to the notice of Ho Lu
+    answer: His Art of War brought him to the notice of Ho Lu, King of Wu.
+    keywords: [ho lu]
+  - id: h10
+    question: According to Epictetus, which things are within our power?
+    source: enchiridion.docx
+    evidence: Within our power are opinion, aim, desire, aversion
+    answer: Within our power are opinion, aim, desire, aversion, and whatever affairs are our own.
+    keywords: [opinion, desire, aversion]
+  - id: h11
+    question: What really disturbs people, according to the Enchiridion?
+    source: enchiridion.docx
+    evidence: Men are disturbed not by things, but by the views which they take of things
+    answer: Men are disturbed not by things but by the views which they take of things.
+    keywords: [views]
+  - id: h12
+    question: What should you say instead of "I have lost it"?
+    source: enchiridion.docx
+    evidence: I have restored it
+    answer: Never say "I have lost it" but "I have restored it".
+    keywords: [restored]
+  - id: h13
+    question: What does Epictetus teach with the comparison to a banquet?
+    source: enchiridion.docx
+    evidence: you must behave as at a banquet
+    answer: You must behave as at a banquet, taking a moderate share of what comes round and not yearning for what has not yet come.
+    keywords: [moderate]
+  - id: h14
+    question: Epictetus compares each person to what role in a play?
+    source: enchiridion.docx
+    evidence: you are an actor in a drama
+    answer: You are an actor in a drama of such sort as the Author chooses.
+    keywords: [actor]
+  - id: h15
+    question: Why is it foolish to wish that your family and friends live forever?
+    source: enchiridion.docx
+    evidence: you wish things to be in your power which are not so
+    answer: It is foolish because you wish things to be in your power which are not so.
+    keywords: [not in your power, power]
+
+  - id: hu1
+    question: According to Epictetus, how many grams of protein should an athlete eat each day?
+    answerable: false
+    kind: near
+  - id: hu2
+    question: How many soldiers should a single cavalry squadron contain, according to Sun Tzu?
+    answerable: false
+    kind: near
+  - id: hu3
+    question: What did Epictetus write about social media?
+    answerable: false
+    kind: near
+  - id: hu4
+    question: Which chess opening is best for beginners?
+    answerable: false
+    kind: far
+  - id: hu5
+    question: How do I reset a forgotten Wi-Fi router password?
+    answerable: false
+    kind: far

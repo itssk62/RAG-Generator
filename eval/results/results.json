@@ -1,0 +1,648 @@
+{
+  "config": {
+    "retrieval": {
+      "mode": "hybrid",
+      "dense_k": 40,
+      "sparse_k": 40,
+      "fused_k": 20,
+      "rerank": true,
+      "top_n": 5
+    },
+    "guard": {
+      "min_top_score": 0.6,
+      "support_score": 0.1,
+      "min_supporting": 1
+    },
+    "citations": {
+      "min_score": 0.5
+    },
+    "models": {
+      "dense": "BAAI/bge-small-en-v1.5",
+      "sparse": "Qdrant/bm25",
+      "reranker": "Xenova/ms-marco-MiniLM-L-6-v2",
+      "llm": "gpt-4o-mini"
+    }
+  },
+  "corpora": {
+    "tech": {
+      "description": "NIST Cybersecurity Framework 2.0 (PDF), PEP 8 (RST), PEP 257 (Markdown)",
+      "questions": {
+        "answerable": 15,
+        "unanswerable": 5
+      },
+      "ingest": {
+        "seconds": 5.4,
+        "documents": {
+          "nist_csf_2.0.pdf": 61,
+          "pep257_docstrings.md": 14,
+          "pep8_style_guide.rst": 58
+        }
+      },
+      "evidence_missing": [],
+      "retrieval": {
+        "dense": {
+          "hit@1": 0.6,
+          "hit@5": 0.933,
+          "mrr": 0.717,
+          "misses": [
+            "t01"
+          ]
+        },
+        "sparse (BM25)": {
+          "hit@1": 0.933,
+          "hit@5": 1,
+          "mrr": 0.967,
+          "misses": []
+        },
+        "hybrid (RRF)": {
+          "hit@1": 0.667,
+          "hit@5": 1,
+          "mrr": 0.822,
+          "misses": []
+        },
+        "hybrid + rerank": {
+          "hit@1": 0.733,
+          "hit@5": 1,
+          "mrr": 0.844,
+          "misses": []
+        }
+      },
+      "refusal_at_configured": {
+        "threshold": 0.6,
+        "answer_rate": 1,
+        "refusal_rate": 1,
+        "balanced_acc": 1.0
+      },
+      "top_scores": [
+        {
+          "id": "t01",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9982721713016176
+        },
+        {
+          "id": "t02",
+          "answerable": true,
+          "kind": null,
+          "top": 0.997526512242001
+        },
+        {
+          "id": "t03",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9755440311919649
+        },
+        {
+          "id": "t04",
+          "answerable": true,
+          "kind": null,
+          "top": 0.978595454141925
+        },
+        {
+          "id": "t05",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9987963563813522
+        },
+        {
+          "id": "t06",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9999246224463573
+        },
+        {
+          "id": "t07",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9990682082324275
+        },
+        {
+          "id": "t08",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9995491133506761
+        },
+        {
+          "id": "t09",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9998742137377594
+        },
+        {
+          "id": "t10",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9959927833737865
+        },
+        {
+          "id": "t11",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9997372340964797
+        },
+        {
+          "id": "t12",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9985423498615574
+        },
+        {
+          "id": "t13",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9903140346362821
+        },
+        {
+          "id": "t14",
+          "answerable": true,
+          "kind": null,
+          "top": 0.997876607521481
+        },
+        {
+          "id": "t15",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9998686667386834
+        },
+        {
+          "id": "tu1",
+          "answerable": false,
+          "kind": "near",
+          "top": 0.2822509829126444
+        },
+        {
+          "id": "tu2",
+          "answerable": false,
+          "kind": "near",
+          "top": 0.5402279042458662
+        },
+        {
+          "id": "tu3",
+          "answerable": false,
+          "kind": "near",
+          "top": 0.03802998097357088
+        },
+        {
+          "id": "tu4",
+          "answerable": false,
+          "kind": "far",
+          "top": 2.336982519656377e-05
+        },
+        {
+          "id": "tu5",
+          "answerable": false,
+          "kind": "far",
+          "top": 1.4296734221858444e-05
+        }
+      ],
+      "citation_verifier": {
+        "pairs": 15,
+        "supported_when_correct": 1,
+        "supported_when_mismatched": 0.133,
+        "auc": 1,
+        "lowest_correct": 0.9848,
+        "highest_mismatched": 0.7596
+      }
+    },
+    "humanities": {
+      "description": "Sun Tzu, The Art of War, Giles translation with commentary (TXT); Epictetus, The Enchiridion (DOCX)",
+      "questions": {
+        "answerable": 15,
+        "unanswerable": 5
+      },
+      "ingest": {
+        "seconds": 21.0,
+        "documents": {
+          "art_of_war.txt": 340,
+          "enchiridion.docx": 86
+        }
+      },
+      "evidence_missing": [],
+      "retrieval": {
+        "dense": {
+          "hit@1": 0.6,
+          "hit@5": 0.867,
+          "mrr": 0.683,
+          "misses": [
+            "h01",
+            "h05"
+          ]
+        },
+        "sparse (BM25)": {
+          "hit@1": 0.467,
+          "hit@5": 0.8,
+          "mrr": 0.604,
+          "misses": [
+            "h04",
+            "h13",
+            "h14"
+          ]
+        },
+        "hybrid (RRF)": {
+          "hit@1": 0.733,
+          "hit@5": 0.867,
+          "mrr": 0.788,
+          "misses": [
+            "h05",
+            "h14"
+          ]
+        },
+        "hybrid + rerank": {
+          "hit@1": 0.8,
+          "hit@5": 0.8,
+          "mrr": 0.821,
+          "misses": [
+            "h05",
+            "h13",
+            "h14"
+          ]
+        }
+      },
+      "refusal_at_configured": {
+        "threshold": 0.6,
+        "answer_rate": 0.933,
+        "refusal_rate": 1,
+        "balanced_acc": 0.967
+      },
+      "top_scores": [
+        {
+          "id": "h01",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9954136746104292
+        },
+        {
+          "id": "h02",
+          "answerable": true,
+          "kind": null,
+          "top": 0.997896116550619
+        },
+        {
+          "id": "h03",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9992739426339484
+        },
+        {
+          "id": "h04",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9935504797917063
+        },
+        {
+          "id": "h05",
+          "answerable": true,
+          "kind": null,
+          "top": 0.96377326869378
+        },
+        {
+          "id": "h06",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9993178017798229
+        },
+        {
+          "id": "h07",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9997901699363957
+        },
+        {
+          "id": "h08",
+          "answerable": true,
+          "kind": null,
+          "top": 0.988529748810157
+        },
+        {
+          "id": "h09",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9963150578094822
+        },
+        {
+          "id": "h10",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9956618669694206
+        },
+        {
+          "id": "h11",
+          "answerable": true,
+          "kind": null,
+          "top": 0.8151868939212316
+        },
+        {
+          "id": "h12",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9929133689296257
+        },
+        {
+          "id": "h13",
+          "answerable": true,
+          "kind": null,
+          "top": 0.673333254638433
+        },
+        {
+          "id": "h14",
+          "answerable": true,
+          "kind": null,
+          "top": 0.10792993084865196
+        },
+        {
+          "id": "h15",
+          "answerable": true,
+          "kind": null,
+          "top": 0.9990066253009675
+        },
+        {
+          "id": "hu1",
+          "answerable": false,
+          "kind": "near",
+          "top": 9.045083747974132e-05
+        },
+        {
+          "id": "hu2",
+          "answerable": false,
+          "kind": "near",
+          "top": 0.4286543603753742
+        },
+        {
+          "id": "hu3",
+          "answerable": false,
+          "kind": "near",
+          "top": 0.5222085672008808
+        },
+        {
+          "id": "hu4",
+          "answerable": false,
+          "kind": "far",
+          "top": 1.6688048146496142e-05
+        },
+        {
+          "id": "hu5",
+          "answerable": false,
+          "kind": "far",
+          "top": 1.4481019571448551e-05
+        }
+      ],
+      "citation_verifier": {
+        "pairs": 15,
+        "supported_when_correct": 1,
+        "supported_when_mismatched": 0,
+        "auc": 1,
+        "lowest_correct": 0.98,
+        "highest_mismatched": 0.0011
+      }
+    }
+  },
+  "calibration": {
+    "sweep": {
+      "tech": [
+        {
+          "threshold": 0.05,
+          "answer_rate": 1,
+          "refusal_rate": 0.6,
+          "balanced_acc": 0.8
+        },
+        {
+          "threshold": 0.1,
+          "answer_rate": 1,
+          "refusal_rate": 0.6,
+          "balanced_acc": 0.8
+        },
+        {
+          "threshold": 0.15,
+          "answer_rate": 1,
+          "refusal_rate": 0.6,
+          "balanced_acc": 0.8
+        },
+        {
+          "threshold": 0.2,
+          "answer_rate": 1,
+          "refusal_rate": 0.6,
+          "balanced_acc": 0.8
+        },
+        {
+          "threshold": 0.25,
+          "answer_rate": 1,
+          "refusal_rate": 0.6,
+          "balanced_acc": 0.8
+        },
+        {
+          "threshold": 0.3,
+          "answer_rate": 1,
+          "refusal_rate": 0.8,
+          "balanced_acc": 0.9
+        },
+        {
+          "threshold": 0.35,
+          "answer_rate": 1,
+          "refusal_rate": 0.8,
+          "balanced_acc": 0.9
+        },
+        {
+          "threshold": 0.4,
+          "answer_rate": 1,
+          "refusal_rate": 0.8,
+          "balanced_acc": 0.9
+        },
+        {
+          "threshold": 0.45,
+          "answer_rate": 1,
+          "refusal_rate": 0.8,
+          "balanced_acc": 0.9
+        },
+        {
+          "threshold": 0.5,
+          "answer_rate": 1,
+          "refusal_rate": 0.8,
+          "balanced_acc": 0.9
+        },
+        {
+          "threshold": 0.55,
+          "answer_rate": 1,
+          "refusal_rate": 1,
+          "balanced_acc": 1.0
+        },
+        {
+          "threshold": 0.6,
+          "answer_rate": 1,
+          "refusal_rate": 1,
+          "balanced_acc": 1.0
+        },
+        {
+          "threshold": 0.65,
+          "answer_rate": 1,
+          "refusal_rate": 1,
+          "balanced_acc": 1.0
+        },
+        {
+          "threshold": 0.7,
+          "answer_rate": 1,
+          "refusal_rate": 1,
+          "balanced_acc": 1.0
+        },
+        {
+          "threshold": 0.75,
+          "answer_rate": 1,
+          "refusal_rate": 1,
+          "balanced_acc": 1.0
+        },
+        {
+          "threshold": 0.8,
+          "answer_rate": 1,
+          "refusal_rate": 1,
+          "balanced_acc": 1.0
+        },
+        {
+          "threshold": 0.85,
+          "answer_rate": 1,
+          "refusal_rate": 1,
+          "balanced_acc": 1.0
+        },
+        {
+          "threshold": 0.9,
+          "answer_rate": 1,
+          "refusal_rate": 1,
+          "balanced_acc": 1.0
+        },
+        {
+          "threshold": 0.95,
+          "answer_rate": 1,
+          "refusal_rate": 1,
+          "balanced_acc": 1.0
+        }
+      ],
+      "humanities": [
+        {
+          "threshold": 0.05,
+          "answer_rate": 1,
+          "refusal_rate": 0.6,
+          "balanced_acc": 0.8
+        },
+        {
+          "threshold": 0.1,
+          "answer_rate": 1,
+          "refusal_rate": 0.6,
+          "balanced_acc": 0.8
+        },
+        {
+          "threshold": 0.15,
+          "answer_rate": 0.933,
+          "refusal_rate": 0.6,
+          "balanced_acc": 0.767
+        },
+        {
+          "threshold": 0.2,
+          "answer_rate": 0.933,
+          "refusal_rate": 0.6,
+          "balanced_acc": 0.767
+        },
+        {
+          "threshold": 0.25,
+          "answer_rate": 0.933,
+          "refusal_rate": 0.6,
+          "balanced_acc": 0.767
+        },
+        {
+          "threshold": 0.3,
+          "answer_rate": 0.933,
+          "refusal_rate": 0.6,
+          "balanced_acc": 0.767
+        },
+        {
+          "threshold": 0.35,
+          "answer_rate": 0.933,
+          "refusal_rate": 0.6,
+          "balanced_acc": 0.767
+        },
+        {
+          "threshold": 0.4,
+          "answer_rate": 0.933,
+          "refusal_rate": 0.6,
+          "balanced_acc": 0.767
+        },
+        {
+          "threshold": 0.45,
+          "answer_rate": 0.933,
+          "refusal_rate": 0.8,
+          "balanced_acc": 0.867
+        },
+        {
+          "threshold": 0.5,
+          "answer_rate": 0.933,
+          "refusal_rate": 0.8,
+          "balanced_acc": 0.867
+        },
+        {
+          "threshold": 0.55,
+          "answer_rate": 0.933,
+          "refusal_rate": 1,
+          "balanced_acc": 0.967
+        },
+        {
+          "threshold": 0.6,
+          "answer_rate": 0.933,
+          "refusal_rate": 1,
+          "balanced_acc": 0.967
+        },
+        {
+          "threshold": 0.65,
+          "answer_rate": 0.933,
+          "refusal_rate": 1,
+          "balanced_acc": 0.967
+        },
+        {
+          "threshold": 0.7,
+          "answer_rate": 0.867,
+          "refusal_rate": 1,
+          "balanced_acc": 0.933
+        },
+        {
+          "threshold": 0.75,
+          "answer_rate": 0.867,
+          "refusal_rate": 1,
+          "balanced_acc": 0.933
+        },
+        {
+          "threshold": 0.8,
+          "answer_rate": 0.867,
+          "refusal_rate": 1,
+          "balanced_acc": 0.933
+        },
+        {
+          "threshold": 0.85,
+          "answer_rate": 0.8,
+          "refusal_rate": 1,
+          "balanced_acc": 0.9
+        },
+        {
+          "threshold": 0.9,
+          "answer_rate": 0.8,
+          "refusal_rate": 1,
+          "balanced_acc": 0.9
+        },
+        {
+          "threshold": 0.95,
+          "answer_rate": 0.8,
+          "refusal_rate": 1,
+          "balanced_acc": 0.9
+        }
+      ]
+    },
+    "best_joint": 0.6,
+    "tuned_on_tech_tested_on_humanities": {
+      "threshold": 0.75,
+      "answer_rate": 0.867,
+      "refusal_rate": 1,
+      "balanced_acc": 0.933
+    },
+    "tuned_on_humanities_tested_on_tech": {
+      "threshold": 0.6,
+      "answer_rate": 1,
+      "refusal_rate": 1,
+      "balanced_acc": 1.0
+    }
+  }
+}

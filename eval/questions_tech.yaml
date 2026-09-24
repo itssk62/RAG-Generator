@@ -1,0 +1,117 @@
+corpus: tech
+description: NIST Cybersecurity Framework 2.0 (PDF), PEP 8 (RST), PEP 257 (Markdown)
+files: [nist_csf_2.0.pdf, pep8_style_guide.rst, pep257_docstrings.md]
+# evidence: short verbatim phrase (case/whitespace/quote-insensitive) that a correct source chunk contains
+# answer:   reference claim, used to probe the citation verifier and to check LLM answers
+questions:
+  - id: t01
+    question: Which six Functions make up the CSF 2.0 Core?
+    source: nist_csf_2.0.pdf
+    evidence: IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER
+    answer: The CSF Core Functions are GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER.
+    keywords: [govern, identify, protect, detect, respond, recover]
+  - id: t02
+    question: What are the four tiers an organization's cybersecurity risk practices can be placed in?
+    source: nist_csf_2.0.pdf
+    evidence: Risk Informed (Tier 2)
+    answer: The Tiers are Partial (Tier 1), Risk Informed (Tier 2), Repeatable (Tier 3), and Adaptive (Tier 4).
+    keywords: [partial, risk informed, repeatable, adaptive]
+  - id: t03
+    question: What is the GOVERN function responsible for?
+    source: nist_csf_2.0.pdf
+    evidence: risk management strategy, expectations, and policy are established, communicated, and monitored
+    answer: Under GOVERN, the organization's cybersecurity risk management strategy, expectations, and policy are established, communicated, and monitored.
+    keywords: [strategy, policy, monitored]
+  - id: t04
+    question: How does a Current Profile differ from a Target Profile?
+    source: nist_csf_2.0.pdf
+    evidence: A Current Profile specifies the Core outcomes
+    answer: A Current Profile specifies the Core outcomes an organization is currently achieving, while a Target Profile specifies the desired outcomes it has selected and prioritized.
+    keywords: [current, target, desired]
+  - id: t05
+    question: How is cybersecurity risk strategy handled by an organization at the Partial tier?
+    source: nist_csf_2.0.pdf
+    evidence: managed in an ad hoc manner
+    answer: At Tier 1 the organizational cybersecurity risk strategy is managed in an ad hoc manner.
+    keywords: [ad hoc]
+  - id: t06
+    question: What does a CSF Organizational Profile describe?
+    source: nist_csf_2.0.pdf
+    evidence: describes an organization's current and/or target cybersecurity posture
+    answer: An Organizational Profile describes an organization's current and/or target cybersecurity posture in terms of the Core's outcomes.
+    keywords: [current, target, posture]
+  - id: t07
+    question: How many spaces should each indentation level use in Python code?
+    source: pep8_style_guide.rst
+    evidence: Use 4 spaces per indentation level
+    answer: Use 4 spaces per indentation level.
+    keywords: ["4"]
+  - id: t08
+    question: What line length limit does the style guide set for code and for docstrings?
+    source: pep8_style_guide.rst
+    evidence: maximum of 79 characters
+    answer: Lines should be limited to a maximum of 79 characters, and docstrings or comments to 72 characters.
+    keywords: ["79", "72"]
+  - id: t09
+    question: Should a line break come before or after a binary operator?
+    source: pep8_style_guide.rst
+    evidence: displayed formulas always break before binary operations
+    answer: Following mathematical tradition, lines should break before binary operators, which is Knuth's style.
+    keywords: [before]
+  - id: t10
+    question: In what order should import statements be grouped?
+    source: pep8_style_guide.rst
+    evidence: Related third party imports
+    answer: Imports are grouped as standard library imports, then related third party imports, then local application imports.
+    keywords: [standard library, third party, local]
+  - id: t11
+    question: Which letters should never be used as single character variable names?
+    source: pep8_style_guide.rst
+    evidence: (lowercase letter el)
+    answer: Never use 'l', 'O', or 'I' as single character variable names because they can look like one and zero.
+    keywords: ["l", "o", "i"]
+  - id: t12
+    question: How many blank lines go around top-level functions and classes?
+    source: pep8_style_guide.rst
+    evidence: Surround top-level function and class definitions with two blank lines
+    answer: Top-level function and class definitions are surrounded with two blank lines.
+    keywords: [two]
+  - id: t13
+    question: Which kind of quotes should be used around docstrings?
+    source: pep257_docstrings.md
+    evidence: triple double quotes
+    answer: Always use triple double quotes around docstrings, and raw triple double quotes if the docstring contains backslashes.
+    keywords: [triple double]
+  - id: t14
+    question: How should a one-line docstring be phrased?
+    source: pep257_docstrings.md
+    evidence: phrase ending in a period
+    answer: A one-line docstring is a phrase ending in a period that prescribes the effect as a command, such as "Return that".
+    keywords: [period, command]
+  - id: t15
+    question: Are tabs or spaces the preferred way to indent?
+    source: pep8_style_guide.rst
+    evidence: Spaces are the preferred indentation method
+    answer: Spaces are the preferred indentation method.
+    keywords: [spaces]
+
+  - id: tu1
+    question: What fine does NIST impose on an organization that fails a CSF audit?
+    answerable: false
+    kind: near
+  - id: tu2
+    question: What is the maximum number of parameters PEP 8 allows a function to have?
+    answerable: false
+    kind: near
+  - id: tu3
+    question: What minimum encryption key length does CSF 2.0 require for data at rest?
+    answerable: false
+    kind: near
+  - id: tu4
+    question: How do I configure TLS termination on a Kubernetes ingress controller?
+    answerable: false
+    kind: far
+  - id: tu5
+    question: What is the recommended daily dose of vitamin D for adults?
+    answerable: false
+    kind: far

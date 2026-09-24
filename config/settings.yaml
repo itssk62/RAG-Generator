@@ -1,0 +1,53 @@
+# Every value here can be overridden with an env var: RAG__<SECTION>__<KEY>, e.g.
+#   RAG__MODELS__LLM=anthropic/claude-3-5-haiku-latest
+# chunking / retrieval / guard / citations can also be overridden per KB at creation time.
+
+data_dir: ./data
+max_upload_mb: 50
+
+qdrant:
+  url: http://localhost:6333     # ":memory:" or a filesystem path runs Qdrant in local mode
+  collection_prefix: kb_
+
+# Extension -> parser. A value is "module:Class" or {class: "module:Class", options: {...}}.
+# Map a new extension to an existing parser here; no code change needed.
+parsers:
+  .pdf: app.ingestion.parsers.pdf:PdfParser
+  .docx: app.ingestion.parsers.docx:DocxParser
+  .md: app.ingestion.parsers.markdown:MarkdownParser
+  .markdown: app.ingestion.parsers.markdown:MarkdownParser
+  .txt: app.ingestion.parsers.text:TextParser
+  .text: app.ingestion.parsers.text:TextParser
+  .rst: app.ingestion.parsers.text:TextParser
+
+chunking:
+  max_words: 220
+  overlap_words: 40
+
+models:
+  cache_dir: ./models
+  dense: BAAI/bge-small-en-v1.5
+  dense_path: null               # optional local model dir (offline / air-gapped)
+  sparse: Qdrant/bm25
+  reranker: Xenova/ms-marco-MiniLM-L-6-v2
+  reranker_path: null
+  llm: gpt-4o-mini               # any LiteLLM model string
+  llm_temperature: 0.0
+  llm_max_tokens: 700
+  llm_timeout_s: 60
+
+retrieval:
+  mode: hybrid                   # hybrid | dense | sparse
+  dense_k: 40
+  sparse_k: 40
+  fused_k: 20
+  rerank: true
+  top_n: 5
+
+guard:
+  min_top_score: 0.6             # calibrated on the eval set (best joint + leave-one-corpus-out), see README
+  support_score: 0.1
+  min_supporting: 1
+
+citations:
+  min_score: 0.5                 # eval: correct claim/source pairs >= 0.98, mismatched pairs <= 0.76
