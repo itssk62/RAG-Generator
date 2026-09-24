@@ -241,12 +241,29 @@ What this shows:
 - **Citation verification separates cleanly.** Correct pairs score >= 0.98, mismatched
   pairs <= 0.76, hence `citations.min_score: 0.5`.
 
+End to end with `azure/gpt-4o-mini` (`python eval/run_eval.py --llm`):
+
+| | tech | humanities |
+|---|---|---|
+| answerable questions answered | 100% | 87% |
+| unanswerable questions refused | 100% | 100% |
+| keyword recall of answers | 0.98 | 0.82 |
+| citations judged supported | 83% | 73% |
+| citations to a source that was not provided | 0 | 0 |
+| answers with every citation verified | 73% | 69% |
+| median latency (retrieve + generate + verify) | 1.8 s | 1.6 s |
+
+Reading the citation numbers: most "unsupported" flags are real. The model over-cites,
+for example `[1][2][3][5]` on a sentence that only one of those sources states, and the
+verifier catches the extra ones. A few are false alarms on loose paraphrases (e.g. the
+"I have restored it" answer), which is the expected cost of `citations.min_score: 0.5`
+(D13). The two refused humanities answers are the reranker misses below.
+
 Known gaps from the eval: the MiniLM cross-encoder demotes 3 humanities passages out of
-the top 5 (Giles' bracketed commentary and 19th-century phrasing), and one answerable
-humanities question is refused (top score 0.11). A larger reranker (e.g.
-`BAAI/bge-reranker-base`) is a one-line config change where it can be downloaded. The
-end-to-end LLM table was not produced in the build environment (no API key); run
-`--llm` to add it.
+the top 5 (Giles' bracketed commentary and 19th-century phrasing), so two answerable
+humanities questions are refused. A larger reranker (e.g. `BAAI/bge-reranker-base`) is a
+one-line config change where it can be downloaded. Prompting the model to cite only the
+single best source per sentence would cut the over-citation.
 
 ## Layout
 
