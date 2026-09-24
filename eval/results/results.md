@@ -1,6 +1,6 @@
 # Eval results
 
-Config: guard.min_top_score=0.6, citations.min_score=0.5, top_n=5, models={'dense': 'BAAI/bge-small-en-v1.5', 'sparse': 'Qdrant/bm25', 'reranker': 'Xenova/ms-marco-MiniLM-L-6-v2', 'llm': 'gpt-4o-mini'}
+Config: guard.min_top_score=0.6, citations.min_score=0.5, top_n=5, models={'dense': 'BAAI/bge-small-en-v1.5', 'sparse': 'Qdrant/bm25', 'reranker': 'Xenova/ms-marco-MiniLM-L-6-v2', 'llm': 'azure/gaia-gpt-4o-mini'}
 
 ## Retrieval (answerable questions)
 
@@ -38,7 +38,14 @@ Top rerank score per unanswerable question:
 | tech | 15 | 1 | 0.133 | 1 | 0.9848 | 0.7596 |
 | humanities | 15 | 1 | 0 | 1 | 0.98 | 0.0011 |
 
+## End to end (LLM)
+
+| corpus | answer rate | refusal rate (unanswerable) | keyword recall | citation support | invalid | fully verified | median ms |
+|---|---|---|---|---|---|---|---|
+| tech | 1 | 1 | 0.978 | 0.829 | 0 | 0.733 | 1799 |
+| humanities | 0.867 | 1 | 0.823 | 0.727 | 0 | 0.692 | 1606 |
+
 ## Ingestion
 
-- tech: {'nist_csf_2.0.pdf': 61, 'pep257_docstrings.md': 14, 'pep8_style_guide.rst': 58} chunks in 5.4 s
-- humanities: {'art_of_war.txt': 340, 'enchiridion.docx': 86} chunks in 21.0 s
+- tech: {'nist_csf_2.0.pdf': 61, 'pep257_docstrings.md': 14, 'pep8_style_guide.rst': 58} chunks in 6.4 s
+- humanities: {'art_of_war.txt': 340, 'enchiridion.docx': 86} chunks in 11.9 s

@@ -20,7 +20,7 @@
       "dense": "BAAI/bge-small-en-v1.5",
       "sparse": "Qdrant/bm25",
       "reranker": "Xenova/ms-marco-MiniLM-L-6-v2",
-      "llm": "gpt-4o-mini"
+      "llm": "azure/gaia-gpt-4o-mini"
     }
   },
   "corpora": {
@@ -31,7 +31,7 @@
         "unanswerable": 5
       },
       "ingest": {
-        "seconds": 5.4,
+        "seconds": 6.4,
         "documents": {
           "nist_csf_2.0.pdf": 61,
           "pep257_docstrings.md": 14,
@@ -202,6 +202,257 @@
         "auc": 1,
         "lowest_correct": 0.9848,
         "highest_mismatched": 0.7596
+      },
+      "end_to_end": {
+        "answer_rate": 1,
+        "refusal_rate_unanswerable": 1,
+        "keyword_recall": 0.978,
+        "citation_support_rate": 0.829,
+        "invalid_citations": 0,
+        "fully_verified_answers": 0.733,
+        "median_latency_ms": 1799,
+        "rows": [
+          {
+            "id": "t01",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 5,
+            "supported": 2,
+            "invalid": 0,
+            "verified": false,
+            "ms": 3106,
+            "answer": "The six Functions that make up the CSF 2.0 Core are:\n\n1. GOVERN (GV) \u2014 addresses organizational context, cybersecurity strategy, roles, responsibilities, policy, and oversight.\n2. IDENTIFY (ID) \u2014 involves understanding current cybersecurity risks, assets, suppliers, and improvement opportunities.\n3. PROTECT (PR) \u2014 includes safeguards to manage cybersecurity risks such as identity management, data security, and platform security.\n4. DETECT (DE) \u2014 focuses on finding and analyzing possible cybersecurity attacks and compromises.\n5. RESPOND (RS) \u2014 involves actions taken regarding detected cybersecurity incidents, including incident management and communication.\n6. RECOVER (RC) \u2014 supports restoring assets and operations affected by cybersecurity incidents to normal operations [1][2][3][4][5]."
+          },
+          {
+            "id": "t02",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 8,
+            "supported": 8,
+            "invalid": 0,
+            "verified": true,
+            "ms": 4256,
+            "answer": "The four tiers an organization's cybersecurity risk practices can be placed in are:\n\n1. Partial (Tier 1) \u2013 characterized by ad hoc, informal risk management practices with limited organizational awareness of cybersecurity risks [1][2].\n2. Risk Informed (Tier 2) \u2013 risk management practices are approved by management but not organization-wide, with some awareness of risks and informal information sharing [2][3].\n3. Repeatable (Tier 3) \u2013 formally approved risk management policies and organization-wide approaches, with consistent methods and regular updates based on risk [3][4].\n4. Adaptive (Tier 4) \u2013 organization-wide, risk-informed policies with continuous improvement, real-time risk understanding, and active adaptation to evolving threats [4][5]."
+          },
+          {
+            "id": "t03",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 0.6666666666666666,
+            "citations": 4,
+            "supported": 3,
+            "invalid": 0,
+            "verified": false,
+            "ms": 3218,
+            "answer": "The GOVERN function is responsible for establishing, communicating, and monitoring the organization's cybersecurity risk management strategy, expectations, and policy. It supports organizational risk communication with executives, who discuss strategy and how cybersecurity-related uncertainties might affect organizational objectives. GOVERN addresses understanding organizational context; establishing cybersecurity strategy and supply chain risk management; defining roles, responsibilities, and authorities; setting policies; and overseeing cybersecurity strategy. It integrates cybersecurity risk management with enterprise risk management (ERM) programs and informs the implementation of the other five CSF Functions. GOVERN is central to prioritizing cybersecurity outcomes in alignment with the organization's mission and stakeholder expectations [1][3][4][5]."
+          },
+          {
+            "id": "t04",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 1,
+            "supported": 1,
+            "invalid": 0,
+            "verified": true,
+            "ms": 1831,
+            "answer": "A Current Profile specifies the Core outcomes that an organization is currently achieving or attempting to achieve and characterizes how or to what extent each outcome is being achieved. In contrast, a Target Profile specifies the desired outcomes that an organization has selected and prioritized for achieving its cybersecurity risk management objectives, considering anticipated changes such as new requirements, technology adoption, and threat intelligence trends [2]."
+          },
+          {
+            "id": "t05",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 1,
+            "supported": 1,
+            "invalid": 0,
+            "verified": true,
+            "ms": 2106,
+            "answer": "At the Partial tier (Tier 1), the application of the organizational cybersecurity risk strategy is managed in an ad hoc manner. There is limited awareness of cybersecurity risks at the organizational level, and prioritization is ad hoc and not formally based on objectives or the threat environment. The organization implements cybersecurity risk management irregularly and on a case-by-case basis. It may lack processes to share cybersecurity information within the organization and is generally unaware of the cybersecurity risks associated with its suppliers and the products and services it acquires and uses [1]."
+          },
+          {
+            "id": "t06",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 2,
+            "supported": 1,
+            "invalid": 0,
+            "verified": false,
+            "ms": 2468,
+            "answer": "A CSF Organizational Profile describes an organization\u2019s current and/or target cybersecurity posture in terms of the Core\u2019s outcomes. It is used to understand, tailor, assess, prioritize, and communicate the Core\u2019s outcomes by considering the organization\u2019s mission objectives, stakeholder expectations, threat landscape, and requirements. This allows the organization to prioritize actions to achieve specific outcomes and communicate that information to stakeholders [1][2]."
+          },
+          {
+            "id": "t07",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 1,
+            "supported": 1,
+            "invalid": 0,
+            "verified": true,
+            "ms": 2233,
+            "answer": "Each indentation level in Python code should use 4 spaces [1]."
+          },
+          {
+            "id": "t08",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 2,
+            "supported": 2,
+            "invalid": 0,
+            "verified": true,
+            "ms": 1697,
+            "answer": "The style guide sets a maximum line length limit of 79 characters for code lines. For docstrings and comments, the line length should be limited to 72 characters [1][2]."
+          },
+          {
+            "id": "t09",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 1,
+            "supported": 1,
+            "invalid": 0,
+            "verified": true,
+            "ms": 1662,
+            "answer": "A line break should come before a binary operator to improve readability. This approach follows the tradition from mathematics and is suggested for new Python code, as it makes it easier to match operators with their operands and avoids scattering operators across different columns on the screen [1]."
+          },
+          {
+            "id": "t10",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 1,
+            "supported": 1,
+            "invalid": 0,
+            "verified": true,
+            "ms": 1636,
+            "answer": "Import statements should be grouped in the following order: \n1. Standard library imports. \n2. Related third party imports. \n3. Local application/library specific imports. \n\nA blank line should be put between each group of imports [1]."
+          },
+          {
+            "id": "t11",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 1,
+            "supported": 1,
+            "invalid": 0,
+            "verified": true,
+            "ms": 1799,
+            "answer": "The letters that should never be used as single character variable names are 'l' (lowercase letter el), 'O' (uppercase letter oh), and 'I' (uppercase letter eye) because in some fonts these characters are indistinguishable from the numerals one and zero [1]."
+          },
+          {
+            "id": "t12",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 1,
+            "supported": 1,
+            "invalid": 0,
+            "verified": true,
+            "ms": 1925,
+            "answer": "Top-level function and class definitions should be surrounded by two blank lines [1]."
+          },
+          {
+            "id": "t13",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 2,
+            "supported": 2,
+            "invalid": 0,
+            "verified": true,
+            "ms": 1664,
+            "answer": "Docstrings should always use triple double quotes (`\"\"\"triple double quotes\"\"\"`) for consistency with the docstring convention in PEP 257 [2][3]."
+          },
+          {
+            "id": "t14",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 2,
+            "supported": 1,
+            "invalid": 0,
+            "verified": false,
+            "ms": 2483,
+            "answer": "A one-line docstring should be a phrase ending in a period that prescribes the function or method's effect as a command, such as \"Do this\" or \"Return that,\" rather than a description like \"Returns the pathname ...\" [1]. It should not reiterate the function or method parameters, which can be obtained by introspection [1]."
+          },
+          {
+            "id": "t15",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 3,
+            "supported": 3,
+            "invalid": 0,
+            "verified": true,
+            "ms": 1735,
+            "answer": "Spaces are the preferred indentation method in Python [1]. Tabs should only be used to remain consistent with code that is already indented with tabs [1]. Python disallows mixing tabs and spaces for indentation [1]."
+          },
+          {
+            "id": "tu1",
+            "answerable": false,
+            "refused": true,
+            "keyword_recall": null,
+            "citations": 0,
+            "supported": 0,
+            "invalid": 0,
+            "verified": false,
+            "ms": 416,
+            "answer": "I don't have enough evidence in this knowledge base to answer that."
+          },
+          {
+            "id": "tu2",
+            "answerable": false,
+            "refused": true,
+            "keyword_recall": null,
+            "citations": 0,
+            "supported": 0,
+            "invalid": 0,
+            "verified": false,
+            "ms": 608,
+            "answer": "I don't have enough evidence in this knowledge base to answer that."
+          },
+          {
+            "id": "tu3",
+            "answerable": false,
+            "refused": true,
+            "keyword_recall": null,
+            "citations": 0,
+            "supported": 0,
+            "invalid": 0,
+            "verified": false,
+            "ms": 508,
+            "answer": "I don't have enough evidence in this knowledge base to answer that."
+          },
+          {
+            "id": "tu4",
+            "answerable": false,
+            "refused": true,
+            "keyword_recall": null,
+            "citations": 0,
+            "supported": 0,
+            "invalid": 0,
+            "verified": false,
+            "ms": 539,
+            "answer": "I don't have enough evidence in this knowledge base to answer that."
+          },
+          {
+            "id": "tu5",
+            "answerable": false,
+            "refused": true,
+            "keyword_recall": null,
+            "citations": 0,
+            "supported": 0,
+            "invalid": 0,
+            "verified": false,
+            "ms": 515,
+            "answer": "I don't have enough evidence in this knowledge base to answer that."
+          }
+        ]
       }
     },
     "humanities": {
@@ -211,7 +462,7 @@
         "unanswerable": 5
       },
       "ingest": {
-        "seconds": 21.0,
+        "seconds": 11.9,
         "documents": {
           "art_of_war.txt": 340,
           "enchiridion.docx": 86
@@ -393,6 +644,257 @@
         "auc": 1,
         "lowest_correct": 0.98,
         "highest_mismatched": 0.0011
+      },
+      "end_to_end": {
+        "answer_rate": 0.867,
+        "refusal_rate_unanswerable": 1,
+        "keyword_recall": 0.823,
+        "citation_support_rate": 0.727,
+        "invalid_citations": 0,
+        "fully_verified_answers": 0.692,
+        "median_latency_ms": 1606,
+        "rows": [
+          {
+            "id": "h01",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 4,
+            "supported": 1,
+            "invalid": 0,
+            "verified": false,
+            "ms": 1682,
+            "answer": "According to Sun Tzu, the highest form of excellence in war is to break the enemy's resistance without fighting, which means to balk the enemy's plans and foil their intentions so that victory is achieved without shedding blood. This is considered superior to fighting and conquering in battle or destroying the enemy's forces [1][2][3][5]."
+          },
+          {
+            "id": "h02",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 2,
+            "supported": 1,
+            "invalid": 0,
+            "verified": false,
+            "ms": 1747,
+            "answer": "The art of war is governed by five constant factors: (1) The Moral Law, (2) Heaven, (3) Earth, (4) The Commander, and (5) Method and discipline [1][4]."
+          },
+          {
+            "id": "h03",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 1,
+            "supported": 1,
+            "invalid": 0,
+            "verified": true,
+            "ms": 1259,
+            "answer": "All warfare is based on deception [1]."
+          },
+          {
+            "id": "h04",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 2,
+            "supported": 2,
+            "invalid": 0,
+            "verified": true,
+            "ms": 1498,
+            "answer": "If you know both the enemy and yourself, you need not fear the result of a hundred battles, implying assured success in warfare [1][2]."
+          },
+          {
+            "id": "h05",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 0.2,
+            "citations": 2,
+            "supported": 2,
+            "invalid": 0,
+            "verified": true,
+            "ms": 2482,
+            "answer": "Sun Tzu describes five classes of spies, including \"converted spies,\" who are enemy spies captured and turned to work for one's own side by means of bribes and promises, using them to feed false information back to the enemy and spy on their own countrymen [4]. The text implies the use of other types of spies as well, but the specific five classes are not fully detailed in the provided excerpts. The importance of employing spies properly and paying them well is emphasized to obtain trustworthy intelligence [1]."
+          },
+          {
+            "id": "h06",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 2,
+            "supported": 2,
+            "invalid": 0,
+            "verified": true,
+            "ms": 1363,
+            "answer": "The first way of attacking with fire is to burn soldiers in their camp [1][2]."
+          },
+          {
+            "id": "h07",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 1,
+            "supported": 1,
+            "invalid": 0,
+            "verified": true,
+            "ms": 2496,
+            "answer": "The art of war recognizes nine varieties of ground: (1) Dispersive ground; (2) Facile ground; (3) Contentious ground; (4) Open ground; (5) Ground of intersecting highways; (6) Serious ground; (7) Difficult ground; (8) Hemmed-in ground; (9) Desperate ground [1]."
+          },
+          {
+            "id": "h08",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 0,
+            "citations": 1,
+            "supported": 1,
+            "invalid": 0,
+            "verified": true,
+            "ms": 1274,
+            "answer": "No country has ever benefited from prolonged warfare, as stated explicitly in the text [1]."
+          },
+          {
+            "id": "h09",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 2,
+            "supported": 2,
+            "invalid": 0,
+            "verified": true,
+            "ms": 1606,
+            "answer": "King Ho Lu of Wu took notice of Sun Tzu because of his book, the ART OF WAR [1][5]."
+          },
+          {
+            "id": "h10",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 1,
+            "supported": 1,
+            "invalid": 0,
+            "verified": true,
+            "ms": 1738,
+            "answer": "According to Epictetus, things within our power are opinion, aim, desire, aversion, and, in one word, whatever affairs are our own. These are by nature free, unrestricted, and unhindered [1]."
+          },
+          {
+            "id": "h11",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 2,
+            "supported": 1,
+            "invalid": 0,
+            "verified": false,
+            "ms": 1818,
+            "answer": "According to the Enchiridion, people are disturbed not by things themselves, but by the views they take of those things. For example, death is not terrible in itself; rather, the terror comes from the notion that death is terrible. Therefore, disturbances arise from our own opinions and judgments, not from external events or actions by others [1][2]."
+          },
+          {
+            "id": "h12",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 1,
+            "citations": 1,
+            "supported": 0,
+            "invalid": 0,
+            "verified": false,
+            "ms": 1902,
+            "answer": "Instead of saying \"I have lost it,\" you should say \"I have restored it.\" This applies to things like the death of a child, the death of a wife, or the loss of an estate, as these are seen as restorations rather than losses, since what was given can be demanded back by the giver at any time [1]."
+          },
+          {
+            "id": "h13",
+            "answerable": true,
+            "refused": true,
+            "keyword_recall": 0,
+            "citations": 0,
+            "supported": 0,
+            "invalid": 0,
+            "verified": false,
+            "ms": 1665,
+            "answer": "I don't have enough evidence in this knowledge base to answer that."
+          },
+          {
+            "id": "h14",
+            "answerable": true,
+            "refused": true,
+            "keyword_recall": 0,
+            "citations": 0,
+            "supported": 0,
+            "invalid": 0,
+            "verified": false,
+            "ms": 398,
+            "answer": "I don't have enough evidence in this knowledge base to answer that."
+          },
+          {
+            "id": "h15",
+            "answerable": true,
+            "refused": false,
+            "keyword_recall": 0.5,
+            "citations": 1,
+            "supported": 1,
+            "invalid": 0,
+            "verified": true,
+            "ms": 3378,
+            "answer": "It is foolish to wish that your family and friends live forever because you are wishing for things to be in your power which are not so, and what belongs to others to be your own. This is an exercise in wishing for what is beyond your control, which leads to disappointment. Instead, one should exercise what is within their own power to avoid such disappointment [1]."
+          },
+          {
+            "id": "hu1",
+            "answerable": false,
+            "refused": true,
+            "keyword_recall": null,
+            "citations": 0,
+            "supported": 0,
+            "invalid": 0,
+            "verified": false,
+            "ms": 405,
+            "answer": "I don't have enough evidence in this knowledge base to answer that."
+          },
+          {
+            "id": "hu2",
+            "answerable": false,
+            "refused": true,
+            "keyword_recall": null,
+            "citations": 0,
+            "supported": 0,
+            "invalid": 0,
+            "verified": false,
+            "ms": 469,
+            "answer": "I don't have enough evidence in this knowledge base to answer that."
+          },
+          {
+            "id": "hu3",
+            "answerable": false,
+            "refused": true,
+            "keyword_recall": null,
+            "citations": 0,
+            "supported": 0,
+            "invalid": 0,
+            "verified": false,
+            "ms": 520,
+            "answer": "I don't have enough evidence in this knowledge base to answer that."
+          },
+          {
+            "id": "hu4",
+            "answerable": false,
+            "refused": true,
+            "keyword_recall": null,
+            "citations": 0,
+            "supported": 0,
+            "invalid": 0,
+            "verified": false,
+            "ms": 394,
+            "answer": "I don't have enough evidence in this knowledge base to answer that."
+          },
+          {
+            "id": "hu5",
+            "answerable": false,
+            "refused": true,
+            "keyword_recall": null,
+            "citations": 0,
+            "supported": 0,
+            "invalid": 0,
+            "verified": false,
+            "ms": 421,
+            "answer": "I don't have enough evidence in this knowledge base to answer that."
+          }
+        ]
       }
     }
   },
