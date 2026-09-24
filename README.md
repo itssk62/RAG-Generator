@@ -5,6 +5,7 @@ Answers are grounded in retrieved passages, cite them as `[n]`, and every citati
 verified. When the evidence is weak the system refuses instead of guessing.
 
 Design: [HLD.md](HLD.md). Why things are the way they are: [DECISIONS.md](DECISIONS.md).
+What comes next: [FUTURE_SCOPE.md](FUTURE_SCOPE.md).
 
 ## Prerequisites
 
